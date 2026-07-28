@@ -1,2 +1,2 @@
 # General-Purpose-Processor-VHDL
-16-bit general-purpose processor designed in VHDL and implemented on an Intel Cyclone II FPGA using Quartus Prime.
+This project implements a modular 8-bit general-purpose processor in VHDL and deploys it on an Intel Cyclone II FPGA using Quartus Prime. The processor integrates register units, a finite state machine (FSM), a 4-to-16 decoder, multiple Arithmetic Logic Unit (ALU) implementations, and a seven-segment display interface to execute arithmetic and logical operations in hardware. The design was verified through waveform simulation before FPGA deployment.
