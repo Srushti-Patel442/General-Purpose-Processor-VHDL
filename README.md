@@ -1,152 +1,116 @@
 # General Purpose Processor (VHDL)
 
-An 8-bit General Purpose Processor designed in VHDL and implemented on an FPGA. The processor integrates a register unit, finite state machine, decoder, arithmetic logic unit (ALU), and seven-segment display to execute arithmetic and logical operations through microcoded control signals.
+An 8-bit General Purpose Processor designed and implemented in VHDL, integrating a register unit, finite state machine, decoder, arithmetic logic unit (ALU), and seven-segment display into a modular processor architecture deployed on an FPGA.
 
 ---
 
 ## Overview
 
-This project demonstrates the complete design, simulation, and implementation of a simple processor architecture using VHDL. Individual hardware modules were developed independently before being integrated into a complete datapath capable of executing arithmetic and logical instructions on an FPGA.
+The General Purpose Processor is a custom digital processor developed using VHDL to demonstrate the design, simulation, and implementation of a modular processor architecture. The project integrates multiple hardware components—including a register unit, finite state machine, decoder, arithmetic logic unit, and display driver—into a complete datapath capable of executing arithmetic and logical operations.
 
----
-
-## Preview
-
-### Processor Architecture
-
-> Add block diagram here
-
-![Architecture](images/architecture.png)
-
-### FPGA Implementation
-
-> Add image of the complete processor or FPGA setup here
-
-![Processor](images/processor.png)
-
----
-
-## Status
-
-Completed as part of a Digital Systems project with successful simulation, integration, and FPGA implementation. Future improvements include expanding the instruction set and implementing memory support.
+The processor was verified through waveform simulation in Intel Quartus Prime before being successfully deployed on an FPGA development board.
 
 ---
 
 ## Features
 
-- Custom 8-bit processor architecture
-- Modular VHDL design
-- Register-based datapath
-- Moore Finite State Machine control unit
-- 4×16 decoder for microcode generation
-- Arithmetic Logic Unit (ALU)
-- Seven-segment display driver
-- Functional simulation and waveform verification
-- FPGA implementation using Intel Quartus Prime
+- Custom 8-bit processor architecture designed in VHDL
+- Modular register unit for operand storage
+- Moore finite state machine for processor control
+- 4×16 decoder for instruction and control signal generation
+- Arithmetic Logic Unit supporting arithmetic and logical operations
+- Seven-segment display output for result visualization
+- Functional simulation using waveform analysis
+- FPGA implementation and hardware verification
 
 ---
 
-## Architecture
+## Tech Stack
 
-The processor consists of five primary hardware modules:
-
-- Register Unit
-- Finite State Machine (FSM)
-- 4×16 Decoder
-- Arithmetic Logic Unit (ALU)
-- Seven-Segment Display Driver
-
-The FSM generates control signals that are decoded into microcode instructions, allowing the ALU to execute arithmetic and logical operations before displaying results on the FPGA.
+| Category | Technologies |
+|----------|--------------|
+| Hardware Description Language | VHDL |
+| FPGA Design | Intel Quartus Prime |
+| Hardware Platform | Intel Cyclone II FPGA |
+| Digital Design | Finite State Machines, ALU Design, Register Architecture |
+| Verification | Waveform Simulation |
 
 ---
 
-## Supported Operations
+## Processor Components
 
-### Arithmetic
+### Register Unit
+
+- Stores two 8-bit operands
+- Synchronous data loading using clocked registers
+
+### Control Unit
+
+- Moore Finite State Machine
+- Generates processor control signals for instruction execution
+
+### Decoder
+
+- 4×16 decoder used for instruction decoding and microcode generation
+
+### Arithmetic Logic Unit
+
+Supported operations include:
 
 - Addition
 - Subtraction
-
-### Logical
-
-- NOT
+- AND
+- OR
+- XOR
+- XNOR
 - NAND
 - NOR
-- AND
-- XOR
-- OR
-- XNOR
+- NOT
 
-Additional instruction sets were also implemented through alternate ALU configurations.
+### Display Unit
 
----
-
-## Technologies
-
-- VHDL
-- Intel Quartus Prime
-- FPGA Development Board
-- Digital Logic Design
-- Moore Finite State Machines
+- Displays processor output using dual seven-segment displays
 
 ---
 
-## Project Structure
+## Verification
 
-```text
-General-Purpose-Processor/
-│
-├── src/
-│   ├── alu.vhd
-│   ├── decoder.vhd
-│   ├── fsm.vhd
-│   ├── latch1.vhd
-│   ├── latch2.vhd
-│   ├── seg7.vhd
-│   └── top_level.vhd
-│
-├── simulation/
-│
-├── images/
-│
-└── README.md
-```
-
----
-
-## Results
-
-The processor was successfully verified through simulation and FPGA testing.
+The processor was verified through simulation and FPGA implementation.
 
 Testing included:
 
 - Register loading
-- State transitions
-- Decoder output validation
-- ALU arithmetic operations
-- ALU logical operations
+- FSM state transitions
+- Decoder functionality
+- Arithmetic operations
+- Logical operations
 - Seven-segment display output
 - Complete processor integration
 
-Waveform analysis confirmed correct timing and synchronization between processor modules.
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Srushti-Patel442/General-Purpose-Processor-VHDL.git
+```
+
+Open the project using Intel Quartus Prime and compile the design before programming the FPGA development board.
 
 ---
 
-## Future Work
+## Roadmap
 
-- Expand the instruction set
+- Expand the processor instruction set
 - Add register file support
-- Implement RAM and instruction memory
-- Add branching and jump instructions
-- Design a programmable instruction pipeline
-- Develop a simple assembler for custom programs
+- Integrate RAM and instruction memory
+- Implement branching and jump instructions
+- Develop a simple instruction execution pipeline
 
 ---
 
 ## Author
 
 **Srushti Patel**
-
-Computer Engineering Student
-
-Toronto Metropolitan University
